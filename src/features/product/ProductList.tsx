@@ -1,9 +1,13 @@
 
 import { useGetProductsQuery } from "./productApi"
+import { addToCart } from "../cart/cartSlice";
+import { useAppDispatch } from "../../app/hooks";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductsList() {
     const{data:products,isLoading,error}=useGetProductsQuery()
-
+  const dispatch = useAppDispatch()
+  const navigate=useNavigate()
 
 
 
@@ -22,7 +26,7 @@ export default function ProductsList() {
             </div>
           </>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-5 m-1 gap-4 p-2">
+          <div className="grid grid-cols-2 md:grid-cols-5 m-1 gap-4 p-2 ">
             {products?.map((product) => (
               <div
                 className="border rounded-lg p-4 shadow m-2 "
@@ -31,16 +35,22 @@ export default function ProductsList() {
               >
                 <img
                   src={product.image}
-                  className="h-32 object-contain mx-auto"
+                  className="h-36 object-contain mx-auto"
                   alt="..."
+                  onClick={() => navigate(`/product/${product.id}`)}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{product.title}</h5>
+                  <h5 className="card-title truncate">{product.title}</h5>
                   <p className="card-text truncate">{product.description}.</p>
                   <p className="text-sm">${product.price}</p>
-                  <a href="#" className="btn btn-primary">
-                    Add to cart
-                  </a>
+                  <div className="mt-auto">
+                    <button
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded text-sm"
+                      onClick={() => dispatch(addToCart(product))}
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

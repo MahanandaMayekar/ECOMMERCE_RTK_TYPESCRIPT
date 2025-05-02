@@ -1,14 +1,15 @@
-import ProductsList from './features/product/ProductList';
 
+import Navbar from './components/Navbar';
 import './App.css'
-
+import Router from './routes/Router';
 function App() {
 
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <ProductsList/>
+      <Navbar />
+      <Router/>
+      
     </>
   );
 }
