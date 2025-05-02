@@ -1,3 +1,40 @@
+# 🛍️ MiniShop – E-Commerce Cart App
+
+A minimal e-commerce cart application built using **React**, **TypeScript**, **Redux Toolkit**, and **RTK Query**.
+
+## ✨ Features
+
+- 🔍 View a list of products fetched via RTK Query.
+- 🛒 Add products to the cart.
+- ➖ Remove items from the cart.
+- 🧮 Automatically calculate and display the total price.
+- 🔗 Navigate between pages (Home, About, Contact, Product Details).
+- 📦 View detailed information for each product.
+
+## 🛠️ Tech Stack
+
+- ⚛️ React
+- 🧱 TypeScript
+- 📦 Redux Toolkit
+- 🌐 RTK Query (for API calls)
+- 💨 Tailwind CSS (for UI styling)
+- 🛣️ React Router DOM
+
+
+## 🛠️ Screenshots
+![sceenshots](./src/assets/ss1.png)
+![sceenshots](./src/assets/ss2.png)
+![sceenshots](./src/assets/ss3.png)
+
+
+
+
+
+
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
